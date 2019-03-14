@@ -1,0 +1,22 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/komfy/frontend",
+  "author": "talentless_guy <pilll.PL22@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@zeit/next-stylus": "^1.0.1",
+    "koa": "^2.7.0",
+    "koa-router": "^7.4.0",
+    "next": "^8.0.3",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4",
+    "stylus": "^0.54.5"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.5.0",
+    "cross-env": "^5.2.0",
+    "postcss": "^7.0.14"
+  }
+}

@@ -1,2 +1,3 @@
 # frontend
-Komfy main frontend repository
+
+Komfy frontend built with Koa, Next.js, React and Stylus
