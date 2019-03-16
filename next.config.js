@@ -1,2 +1,7 @@
-const withStylus = require('@zeit/next-stylus')
-module.exports = withStylus()
+const withPlugins = require('next-compose-plugins')
+const stylus = require('@zeit/next-stylus')
+const typescript = require('@zeit/next-typescript')
+
+module.exports = withPlugins(
+    [stylus, typescript]
+)
