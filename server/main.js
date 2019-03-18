@@ -12,8 +12,8 @@ log(`App is running in ${!process.env.NODE_ENV ? 'developemt' : 'production'} mo
 n.prepare().then(() => {
   const app = new Koa(), router = new Router()
 
-  router.get('/profile/:profile', async ctx => {
-    await n.render(ctx.req, ctx.res, '/profile', ctx.params)
+  router.get('/user/:user', async ctx => {
+    await n.render(ctx.req, ctx.res, '/user', ctx.params)
     ctx.respond = false
   })
     

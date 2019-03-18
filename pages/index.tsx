@@ -1,9 +1,11 @@
+import * as React from 'react'
+import Link from 'next/link'
 import '../styles/main.styl'
 
 const App = () => (
     <div>
         <h1>Welcome</h1>
-        <a> Let's go</a>
+        <Link href="/user"><a> Let's go</a></Link>
     </div>
 )
 
