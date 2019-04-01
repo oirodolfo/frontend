@@ -1,18 +1,20 @@
 # frontend
 
-Komfy frontend built with Koa, Next.js, React and Stylus
+Komfy frontend built with Koa, Next.js, React and PostCSS
 
 For development we use: Nodemon, CrossEnv and Babel
+
+[UI Components repository](https://github.com/komfy/ui)
 
 Build:
 
 ```sh
 yarn build
-yarn run prod
+yarn start
 ```
 
 Run in development mode:
 
 ```sh
-yarn start
+yarn dev
 ```
