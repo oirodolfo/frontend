@@ -8,6 +8,7 @@ const n = next({ dev }), handle = n.getRequestHandler()
 const { log } = console
 
 log(`App is running in ${!process.env.NODE_ENV ? 'development' : 'production'} mode.`)
+log(`Waiting for building...`)
 
 n.prepare().then(() => {
   const app = new Koa(), router = new Router()

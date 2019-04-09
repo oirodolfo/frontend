@@ -18,12 +18,14 @@
     "@babel/core": "^7.3.4",
     "@types/next": "^8.0.1",
     "@types/react": "^16.8.8",
+    "@zeit/next-css": "^1.0.1",
     "@zeit/next-typescript": "^1.1.1",
     "autoprefixer": "^9.5.1",
     "cross-env": "^5.2.0",
     "next-compose-plugins": "^2.1.1",
     "nodemon": "^1.18.10",
-    "postcss": "^7.0.14"
+    "postcss": "^7.0.14",
+    "precss": "^4.0.0"
   },
   "scripts": {
     "start": "cross-env NODE_ENV=production nodemon",
