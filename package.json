@@ -6,11 +6,11 @@
   "author": "talentless_guy <pilll.PL22@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "esm": "^3.2.18",
+    "esm": "^3.2.22",
     "isomorphic-unfetch": "^3.0.0",
     "koa": "^2.7.0",
     "koa-router": "^7.4.0",
-    "next": "^8.0.3",
+    "next": "8.0.5-canary.26",
     "react": "^16.8.4",
     "react-dom": "^16.8.4"
   },
@@ -19,9 +19,11 @@
     "@types/next": "^8.0.1",
     "@types/react": "^16.8.8",
     "@zeit/next-typescript": "^1.1.1",
+    "autoprefixer": "^9.5.1",
     "cross-env": "^5.2.0",
     "next-compose-plugins": "^2.1.1",
-    "nodemon": "^1.18.10"
+    "nodemon": "^1.18.10",
+    "postcss": "^7.0.14"
   },
   "scripts": {
     "start": "cross-env NODE_ENV=production nodemon",
