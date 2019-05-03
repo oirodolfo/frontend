@@ -1,5 +1,7 @@
 # frontend
 
+![David](https://img.shields.io/david/komfy/frontend.svg?style=flat-square)
+
 Komfy frontend built with Koa, Next.js, React and PostCSS
 
 [UI Components repository](https://github.com/komfy/ui)
