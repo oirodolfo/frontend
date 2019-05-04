@@ -1,9 +1,9 @@
 {
     "parser":  "@typescript-eslint/parser",
     "extends":  [
+      "plugin:prettier/recommended",
       "plugin:@typescript-eslint/recommended",
-      "plugin:react/recommended",
-      "plugin:prettier/recommended"
+      "plugin:react/recommended"
     ],
    "parserOptions":  {
       "ecmaVersion":  2018, 
@@ -17,7 +17,8 @@
         "comma-dangle":"warn",
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/member-delimiter-style": "none",
-        "no-mixed-spaces-and-tabs":"error"
+        "no-mixed-spaces-and-tabs":"error",
+        "implicit-arrow-linebreak": ["error", "beside"]
     },
     "settings": {
         "react": {

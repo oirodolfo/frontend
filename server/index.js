@@ -2,12 +2,15 @@ import Koa from 'koa'
 import next from 'next'
 import Router from 'koa-router'
 
-const dev = process.env.NODE_ENV !== 'production'
-const n = next({ dev }), handle = n.getRequestHandler()
+const { NODE_ENV } = process.env
+
+const dev = NODE_ENV !== 'production'
+const n = next({ dev })
+const handle = n.getRequestHandler()
 
 const { log } = console
 
-log(`App is running in ${!process.env.NODE_ENV ? 'development' : 'production'} mode.`)
+log(`App is running in ${!NODE_ENV ? 'development' : 'production'} mode.`)
 log(`Waiting for building...`)
 
 n.prepare().then(() => {
