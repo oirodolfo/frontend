@@ -3,7 +3,11 @@ import 'isomorphic-unfetch'
 import { NextContext } from 'next'
 import '/styles/main.css'
 
-const UserPage = (props: { user: string }) => (
+declare interface UserPage {
+    user: string
+}
+
+const UserPage = (props: UserPage) => (
     <div>
         <p>Hello, {props.user}!</p>
         <p>There will be content soon.</p>
@@ -11,7 +15,7 @@ const UserPage = (props: { user: string }) => (
     </div>
 )
 
-UserPage.getInitialProps = async ({ query }: NextContext<{ user: string }>) => {
+UserPage.getInitialProps = async ({ query }: NextContext<UserPage>) => {
     return {
         user: query.user
     }

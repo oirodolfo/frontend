@@ -19,7 +19,8 @@
         "@typescript-eslint/member-delimiter-style": "none",
         "no-mixed-spaces-and-tabs":"error",
         "implicit-arrow-linebreak": ["error", "beside"],
-        "quotes": ["error", "single"]
+        "quotes": ["error", "single"],
+        "react/no-unescaped-entities": "off"
     },
     "settings": {
         "react": {
