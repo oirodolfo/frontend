@@ -1,0 +1,27 @@
+{
+    "parser":  "@typescript-eslint/parser",
+    "extends":  [
+      "plugin:@typescript-eslint/recommended",
+      "plugin:react/recommended",
+      "plugin:prettier/recommended"
+    ],
+   "parserOptions":  {
+      "ecmaVersion":  2018, 
+      "sourceType":  "module",
+      "ecmaFeatures":  {
+        "jsx":  true
+      }
+    },
+    "rules":  {
+        "semi": "off",
+        "comma-dangle":"warn",
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "@typescript-eslint/member-delimiter-style": "none",
+        "no-mixed-spaces-and-tabs":"error"
+    },
+    "settings": {
+        "react": {
+            "version": "detect"
+        }
+    }
+}

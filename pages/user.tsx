@@ -3,13 +3,11 @@ import 'isomorphic-unfetch'
 import { NextContext } from 'next'
 import '../styles/main.css'
 
-type Data = {
+interface Data {
     user: string
 }
 
-const UserPage = (props: any) => (
-    <div>Hello, {props.user}!</div>
-)
+const UserPage = (props: Data) => <div>Hello, {props.user}!</div>
 
 UserPage.getInitialProps = async ({ query }: NextContext<Data>) => {
     return {
