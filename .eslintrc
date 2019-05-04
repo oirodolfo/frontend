@@ -18,7 +18,8 @@
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/member-delimiter-style": "none",
         "no-mixed-spaces-and-tabs":"error",
-        "implicit-arrow-linebreak": ["error", "beside"]
+        "implicit-arrow-linebreak": ["error", "beside"],
+        "quotes": ["error", "single"]
     },
     "settings": {
         "react": {

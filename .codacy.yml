@@ -1,0 +1,6 @@
+engines:
+    exclude_paths:
+        - 'postcss.config.js'
+        - 'nodemon.json'
+        - 'next.config.js'
+        - 'jest.config.js'
