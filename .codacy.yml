@@ -1,6 +1,7 @@
-engines:
-    exclude_paths:
-        - 'postcss.config.js'
-        - 'nodemon.json'
-        - 'next.config.js'
-        - 'jest.config.js'
+exclude_paths:
+    - 'postcss.config.js'
+    - 'nodemon.json'
+    - 'next.config.js'
+    - 'jest.config.js'
+    - 'demo/**/*'
+    - 'tsconfig.json'
