@@ -5,16 +5,21 @@
 
 Komfy frontend built with Koa, Next.js, React and PostCSS
 
+## Project structure
+
+- `pages` - pages built with components. Used by Next.js
+- `server` - backend for Next.js written in Koa for handling URL and some other middleware.
+
 [UI Components repository](https://github.com/komfy/ui)
 
-Build:
+## Build
 
 ```sh
 yarn build
 yarn start
 ```
 
-Run in development mode:
+## Run in development mode
 
 ```sh
 yarn dev

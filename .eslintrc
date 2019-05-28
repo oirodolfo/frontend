@@ -20,7 +20,8 @@
     "@typescript-eslint/member-delimiter-style": "none",
     "object-property-newline": "off",
     "object-curly-newline": "off",
-    "array-bracket-newline": "off"
+    "array-bracket-newline": "off",
+    "quotes": ["off", "single"]
   },
   "settings": {
     "react": {
