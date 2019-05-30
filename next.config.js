@@ -1,8 +1,8 @@
-const withPlugins = require('next-compose-plugins')
-const css = require('@zeit/next-css')
-const ts = require('@zeit/next-typescript')
+const withCss = require('@zeit/next-css')
+const withTypeScript = require('@zeit/next-typescript')
 
-module.exports = {
-	...withPlugins([ts, css]),
-	target: 'serverless'
-}
+module.exports = withTypeScript(
+	withCss({
+		target: 'serverless'
+	})
+)
