@@ -1,15 +1,15 @@
 import * as React from 'react'
 import 'isomorphic-unfetch'
 import { NextContext } from 'next'
-import '/styles/main.css'
+import '../styles/main.css'
 
 declare interface UserPage {
-	user: string
+	id: string
 }
 
-const UserPage = (props: UserPage) => (
+const UserPage = ({ id }: UserPage) => (
 	<div>
-		<p>Hello, {props.user}!</p>
+		<p>Hello, {id}!</p>
 		<p>There will be content soon.</p>
 		<p>You need to wait a bit</p>
 	</div>
@@ -17,7 +17,7 @@ const UserPage = (props: UserPage) => (
 
 UserPage.getInitialProps = async ({ query }: NextContext<UserPage>) => {
 	return {
-		user: query.user
+		id: query.id
 	}
 }
 

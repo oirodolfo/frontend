@@ -1,0 +1,14 @@
+{
+	"version": 2,
+	"alias": "komfy.now.sh",
+	"name": "frontend",
+	"builds": [
+    { "src": "next.config.js", "use": "@now/next" }
+  ],
+	"routes": [
+		{ 
+			"src": "/user/(?<id>[^/]+)$",
+			"dest": "/user?id=$id"
+		 }
+	]
+}
