@@ -9,9 +9,9 @@ declare interface UserPage {
 
 const UserPage = ({ id }: UserPage) => (
 	<div>
-		<p>Hello, {id}!</p>
+		<p>Hello, #{id}!</p>
 		<p>There will be content soon.</p>
-		<p>You need to wait a bit</p>
+		<p>You need to wait a bit until we release our pre-alpha.</p>
 	</div>
 )
 
