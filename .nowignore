@@ -2,3 +2,5 @@ Dockerfile
 .eslintrc
 .codacy.yml
 .circleci
+.editorconfig
+.stylelintrc
