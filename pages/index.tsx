@@ -28,7 +28,7 @@ const App = () => (
       Currently we are working on UI library and API so during next months there won&apos;t be any huge changes here.
       Please stand by until we release v0.0.1 of both API and UI library so we can begin building the website itself.
     </p>
-    I&apos; answer all questions here: <a href="t.me/talentless_guy">@talentless_guy</a>
+    I&apos;ll answer all questions here: <a href="t.me/talentless_guy">@talentless_guy</a>
     <Query query={gql(str)}>
       {({ loading, error, data }: QueryResult) => {
         if (loading) return <p>Loading</p>
