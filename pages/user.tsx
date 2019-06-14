@@ -1,7 +1,6 @@
-import * as React from 'react'
+import React from 'react'
 import 'isomorphic-unfetch'
 import { NextContext } from 'next'
-import '../styles/main.css'
 
 declare interface UserPage {
   id: string
