@@ -1,11 +1,13 @@
 import React from 'react'
+import Head from 'next/head'
+import { withRouter } from 'next/router'
 import { useQuery } from '@apollo/react-hooks'
 import { gql } from 'apollo-boost'
 import styled from 'styled-components'
 import Link from 'next/link'
 import withData from '../lib/apollo'
 
-const Page = styled.div`
+export const Page = styled.div`
   font-family: sans-serif;
   margin: 0;
   display: flex;
@@ -43,6 +45,9 @@ const App = () => {
   )
   return (
     <Page>
+      <Head>
+        <title>Komfy 🔐</title>
+      </Head>
       <Header>Komfy</Header>
       <h2>Project Status ⚡</h2>
       <Links>
@@ -52,10 +57,13 @@ const App = () => {
         <Link href="https://crowdforge.io/projects/534">
           <a>CrowdForge</a>
         </Link>
+        <Link href="https://twitter.com/KomfySocial">
+          <a>Twitter</a>
+        </Link>
       </Links>
       <Status>
-        Currently we are working on UI library and API so during next months there won&apos;t be any huge changes here.
-        Please stand by until we release v0.0.1 of both API and UI library so we can begin building the website itself.
+        Soon there will be new stuff. You&apos;ll be able to create an account and publish images in text. Pre-alpha is
+        close.
       </Status>
       <p>
         I&apos;ll answer all questions here:&nbsp;
@@ -73,11 +81,11 @@ const App = () => {
         )}
         {error && <b>{error.message}</b>}
       </div>
-      <Link href={`/user/${(Math.random() * 5).toString().slice(1, 4)}`}>
+      <Link href={`/user?id=${(Math.random() * 5).toString().slice(2, 4)}`}>
         <a>Random user page</a>
       </Link>
     </Page>
   )
 }
 
-export default withData(App)
+export default withRouter(withData(App))
