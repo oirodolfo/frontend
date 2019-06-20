@@ -5,10 +5,8 @@ node_js:
 
 cache: yarn
 
-install:
-  - yarn install
+script:
   - yarn global add codecov
 
 after_success:
   - codecov
-  - bash <(curl -s https://codecov.io/bash)
