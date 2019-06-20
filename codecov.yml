@@ -1,4 +1,12 @@
 coverage:
-  parsers:
-    javascript:
-      enable_partials: yes
+  status:
+    project:
+      default:
+        # basic
+        target: 0%
+        threshold: 100%
+    patch:
+      default:
+        # basic
+        target: 0%
+        threshold: 100%
