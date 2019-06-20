@@ -15,5 +15,11 @@ exports[`Random pages renders correctly 1`] = `
   <p>
     You need to wait a bit until we release our pre-alpha.
   </p>
+  <a
+    href="/"
+    onClick={[Function]}
+  >
+    Home
+  </a>
 </div>
 `;

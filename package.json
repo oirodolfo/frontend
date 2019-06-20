@@ -50,6 +50,6 @@
     "start": "cross-env NODE_ENV=production next",
     "build": "next build",
     "dev": "next -p 80",
-    "test": "jest"
+    "test": "jest --update-snapshot"
   }
 }
