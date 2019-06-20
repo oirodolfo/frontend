@@ -34,63 +34,60 @@ const Links = styled.div`
   }
 `
 
+const randomUser = (Math.random() * 10).toString().slice(3, 10)
+
 export const Index = () => {
   const GET_USERS = `
-query data {
-  hello
-}
-`
-  const randomUser = (Math.random() * 10).toString().slice(3, 10)
-
+  query myQuery {
+    hello
+  }
+  `
   const { loading, error, data } = useQuery(gql(GET_USERS))
 
-  if (data) {
-    return (
-      <Page>
-        <Head>
-          <title>Komfy 🔐</title>
-        </Head>
-        <Header>Komfy</Header>
-        <h2>Project Status ⚡</h2>
-        <Links>
-          <Link href="https://github.com/komfy">
-            <a>GitHub</a>
-          </Link>
-          <Link href="https://crowdforge.io/projects/534">
-            <a>CrowdForge</a>
-          </Link>
-          <Link href="https://twitter.com/KomfySocial">
-            <a>Twitter</a>
-          </Link>
-        </Links>
-        <Status>
-          Soon there will be new stuff. You&apos;ll be able to create an account and publish images in text. Pre-alpha
-          is close.
-        </Status>
-        <p>
-          I&apos;ll answer all questions here:&nbsp;
-          <Link href="https://t.me/talentless_guy">
-            <a>@talentless_guy</a>
-          </Link>
-        </p>
-        <div>
+  if (error) return <Page>Error! {error.message}</Page>
+
+  return (
+    <Page>
+      <Head>
+        <title>Komfy 🔐</title>
+      </Head>
+      <Header>Komfy</Header>
+      <h2>Project Status ⚡</h2>
+      <Links>
+        <Link href="https://github.com/komfy">
+          <a>GitHub</a>
+        </Link>
+        <Link href="https://crowdforge.io/projects/534">
+          <a>CrowdForge</a>
+        </Link>
+        <Link href="https://twitter.com/KomfySocial">
+          <a>Twitter</a>
+        </Link>
+      </Links>
+      <Status>
+        Soon there will be new stuff. You&apos;ll be able to create an account and publish images in text. Pre-alpha is
+        close.
+      </Status>
+      <p>
+        I&apos;ll answer all questions here:&nbsp;
+        <Link href="https://t.me/talentless_guy">
+          <a>@talentless_guy</a>
+        </Link>
+      </p>
+      <div>
+        {loading ? (
+          <b>Loading...</b>
+        ) : (
           <span>
             GraphQL request:<b> {data.hello}</b>
           </span>
-        </div>
-        <Link href={`/user?id=${randomUser}`} as={`/user/${randomUser}`}>
-          <a>Random user page</a>
-        </Link>
-      </Page>
-    )
-  }
-  if (loading) {
-    return <Page>Loading...</Page>
-  }
-  if (error) {
-    return <Page>Error! {error.message}</Page>
-  }
-  return <Page>Nothing was loaded. You did something wrong</Page>
+        )}
+      </div>
+      <Link href={`/user?id=${randomUser}`} as={`/user/${randomUser}`}>
+        <a>Random user page</a>
+      </Link>
+    </Page>
+  )
 }
 
-export default withApollo()(Index)
+export default withApollo(Index)

@@ -1,44 +1,16 @@
 import React from 'react'
-import { create } from 'react-test-renderer'
-import { Index } from '../pages/index'
+import renderer from 'react-test-renderer'
 import User from '../pages/user'
-import { ApolloProvider } from '@apollo/react-hooks'
-import { ApolloClient } from 'apollo-client'
-import { HttpLink, InMemoryCache } from 'apollo-boost'
+import { Index } from '../pages/index'
+import withApollo from '../lib/apollo'
 
-it('Renders user page correctly', () => {
-  const tree = create(<User id="Ivan" />).toJSON()
+it('Random pages renders correctly', () => {
+  const tree = renderer.create(<User id="Ivan" />).toJSON()
   expect(tree).toMatchSnapshot()
 })
 
-it(`Doesn't fail on receiving Apollo data`, () => {
-  const tree = create(
-    <ApolloProvider
-      client={
-        new ApolloClient({
-          link: new HttpLink({ uri: 'https://api.komfy.now.sh' }),
-          cache: new InMemoryCache()
-        })
-      }>
-      <Index />
-    </ApolloProvider>
-  ).toJSON()
-
+/* it('Renders index page with apollo HOC', () => {
+  const tree = renderer.create(withApollo(Index)).toJSON()
   expect(tree).toMatchSnapshot()
 })
-
-it('Shows error text when wrong link', () => {
-  const tree = create(
-    <ApolloProvider
-      client={
-        new ApolloClient({
-          link: new HttpLink({ uri: 'https://example.com' }),
-          cache: new InMemoryCache()
-        })
-      }>
-      <Index />
-    </ApolloProvider>
-  ).toJSON()
-
-  expect(tree).toMatchSnapshot()
-})
+ */
