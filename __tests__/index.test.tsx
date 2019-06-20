@@ -1,7 +1,7 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 import Index from '../pages/index'
-import User from '../pages/User'
+import User from '../pages/user'
 
 it('Index renders correctly', () => {
   const tree = renderer.create(<Index />).toJSON()
