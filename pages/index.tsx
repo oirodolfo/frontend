@@ -35,7 +35,7 @@ const Links = styled.div`
   }
 `
 
-const App = () => {
+const Index = () => {
   const { loading, error, data } = useQuery(
     gql(`
   query myQuery {
@@ -88,4 +88,4 @@ const App = () => {
   )
 }
 
-export default withRouter(withData(App))
+export default withRouter(withData(Index))
