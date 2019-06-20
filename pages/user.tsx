@@ -19,10 +19,8 @@ const UserPage = ({ id }: UserPage) => (
   </Page>
 )
 
-UserPage.getInitialProps = async ({ query }: NextContext<UserPage>) => {
-  return {
-    id: query.id
-  }
-}
+UserPage.getInitialProps = async ({ query }: NextContext<UserPage>) => ({
+  id: query.id
+})
 
 export default UserPage
