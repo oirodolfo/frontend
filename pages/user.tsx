@@ -2,13 +2,9 @@ import React from 'react'
 import Link from 'next/link'
 import 'isomorphic-unfetch'
 import { NextContext } from 'next'
-import { Page } from './index'
+import { Page } from '../pages/index'
 
-declare interface UserPage {
-  id: string
-}
-
-const UserPage = ({ id }: UserPage) => (
+const UserPage = ({ id }: { id: string }) => (
   <Page>
     <p>Hello, #{id}!</p>
     <p>There will be content soon.</p>

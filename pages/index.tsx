@@ -1,10 +1,10 @@
 import React from 'react'
+import styled from 'styled-components'
 import Head from 'next/head'
 import { useQuery } from '@apollo/react-hooks'
 import { gql } from 'apollo-boost'
-import styled from 'styled-components'
 import Link from 'next/link'
-import withData from '../lib/apollo'
+import withApollo from '../lib/apollo'
 
 export const Page = styled.div`
   font-family: sans-serif;
@@ -34,15 +34,14 @@ const Links = styled.div`
   }
 `
 
-const GET_USERS = `
-query myQuery {
+export const Index = () => {
+  const GET_USERS = `
+query data {
   hello
 }
 `
+  const randomUser = (Math.random() * 10).toString().slice(3, 10)
 
-const randomUser = (Math.random() * 10).toString().slice(3, 10)
-
-const Index = () => {
   const { loading, error, data } = useQuery(gql(GET_USERS))
 
   if (data) {
@@ -91,6 +90,7 @@ const Index = () => {
   if (error) {
     return <Page>Error! {error.message}</Page>
   }
+  return <Page>Nothing was loaded. You did something wrong</Page>
 }
 
-export default withData(Index)
+export default withApollo()(Index)
