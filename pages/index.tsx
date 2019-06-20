@@ -1,6 +1,5 @@
 import React from 'react'
 import Head from 'next/head'
-import { withRouter } from 'next/router'
 import { useQuery } from '@apollo/react-hooks'
 import { gql } from 'apollo-boost'
 import styled from 'styled-components'
@@ -35,13 +34,15 @@ const Links = styled.div`
   }
 `
 
+const randomUser = (Math.random() * 10).toString().slice(3, 10)
+
 const Index = () => {
   const { loading, error, data } = useQuery(
     gql(`
   query myQuery {
     hello
   }
-`)
+      `)
   )
   return (
     <Page>
@@ -81,11 +82,11 @@ const Index = () => {
         )}
         {error && <b>{error.message}</b>}
       </div>
-      <Link href={`/user?id=${(Math.random() * 5).toString().slice(2, 4)}`}>
+      <Link href={`/user?id=${randomUser}`} as={`/user/${randomUser}`}>
         <a>Random user page</a>
       </Link>
     </Page>
   )
 }
 
-export default withRouter(withData(Index))
+export default withData(Index)
