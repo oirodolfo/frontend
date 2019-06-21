@@ -36,7 +36,7 @@ const Links = styled.div`
 
 const randomUser = (Math.random() * 10).toString().slice(3, 10)
 
-export const Index = () => {
+const Index = () => {
   const GET_USERS = `
   query myQuery {
     hello
