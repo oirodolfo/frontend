@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import { NextContext } from 'next'
 import Head from 'next/head'
 import { useQuery } from '@apollo/react-hooks'
 import { gql } from 'apollo-boost'
@@ -60,7 +59,7 @@ const links = [
   }
 ]
 
-const Index = ({ repos }) => {
+const Index = () => {
   const GET_USERS = `
   query myQuery {
     hello
@@ -78,7 +77,7 @@ const Index = ({ repos }) => {
       <Header>Komfy</Header>
       <h2>Project Status ⚡</h2>
       <Links>
-        {links.map((link: { href: string; title: string }, i) => (
+        {links.map((link: { href: string; title: string }, i: number) => (
           <Link href={link.href} key={i}>
             <a>{link.title}</a>
           </Link>
