@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { NextContext } from 'next'
 import Head from 'next/head'
 import { useQuery } from '@apollo/react-hooks'
 import { gql } from 'apollo-boost'
@@ -36,7 +37,30 @@ const Links = styled.div`
 
 const randomUser = (Math.random() * 10).toString().slice(3, 10)
 
-const Index = () => {
+const links = [
+  {
+    href: 'https://github.com/komfy',
+    title: 'GitHub 🐙'
+  },
+  {
+    href: 'https://twitter.com/KomfySocial',
+    title: 'Twitter 🐦'
+  },
+  {
+    href: 'https://codecov.io/gh/komfy/frontend',
+    title: 'CodeCov 📊'
+  },
+  {
+    href: 'https://travis-ci.org/komfy/frontend',
+    title: 'Travis CI ⛓'
+  },
+  {
+    href: 'https://t.me/komfy',
+    title: 'Telegram 📰'
+  }
+]
+
+const Index = ({ repos }) => {
   const GET_USERS = `
   query myQuery {
     hello
@@ -54,15 +78,11 @@ const Index = () => {
       <Header>Komfy</Header>
       <h2>Project Status ⚡</h2>
       <Links>
-        <Link href="https://github.com/komfy">
-          <a>GitHub</a>
-        </Link>
-        <Link href="https://crowdforge.io/projects/534">
-          <a>CrowdForge</a>
-        </Link>
-        <Link href="https://twitter.com/KomfySocial">
-          <a>Twitter</a>
-        </Link>
+        {links.map((link: { href: string; title: string }, i) => (
+          <Link href={link.href} key={i}>
+            <a>{link.title}</a>
+          </Link>
+        ))}
       </Links>
       <Status>
         Soon there will be new stuff. You&apos;ll be able to create an account and publish images in text. Pre-alpha is
@@ -89,5 +109,4 @@ const Index = () => {
     </Page>
   )
 }
-
 export default withApollo(Index)
