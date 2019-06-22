@@ -73,6 +73,10 @@ const Index = () => {
     <Page>
       <Head>
         <title>Komfy 🔐</title>
+        <meta
+          name="description"
+          content="You're not a product anymore. Welcome to the most protected social network."
+        />
       </Head>
       <Header>Komfy</Header>
       <h2>Project Status ⚡</h2>
