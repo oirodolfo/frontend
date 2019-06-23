@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import 'isomorphic-unfetch'
-import { NextContext } from 'next'
+import { NextPageContext } from 'next'
 import { Page } from '../pages/index'
 
 const UserPage = ({ id }: { id: string }) => (
@@ -15,7 +15,7 @@ const UserPage = ({ id }: { id: string }) => (
   </Page>
 )
 
-UserPage.getInitialProps = async ({ query }: NextContext<UserPage>) => ({
+UserPage.getInitialProps = async ({ query }: NextPageContext) => ({
   id: query.id
 })
 

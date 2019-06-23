@@ -1,5 +1,5 @@
-const withTypeScript = require('@zeit/next-typescript')
+const withImages = require('next-images')
 
-module.exports = withTypeScript({
+module.exports = withImages({
   target: 'serverless'
 })
