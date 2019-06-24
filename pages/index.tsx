@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import Head from 'next/head'
 import { useQuery } from '@apollo/react-hooks'
 import { gql } from 'apollo-boost'
 import Link from 'next/link'
@@ -83,13 +82,6 @@ const Index = () => {
         user: sampleUser
       }}>
       <Page>
-        <Head>
-          <title>Komfy 🔐</title>
-          <meta
-            name="description"
-            content="You're not a product anymore. Welcome to the most protected social network."
-          />
-        </Head>
         <NavBar Logo={Logo} />
         <h1>Komfy</h1>
         <h2>Project Status ⚡</h2>
@@ -101,7 +93,7 @@ const Index = () => {
           ))}
         </Links>
         <Status>
-          Soon there will be new stuff. You&apos;ll be able to create an account and publish images in text. Pre-alpha
+          Soon there will be new stuff. You&apos;ll be able to create an account and publish images and text. Pre-alpha
           is close.
         </Status>
         <p>

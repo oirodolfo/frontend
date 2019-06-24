@@ -1,5 +1,6 @@
 import React from 'react'
 import { NextComponentType, NextPageContext } from 'next'
+import Meta from '../components/Meta'
 import App, { Container } from 'next/app'
 import { createGlobalStyle } from 'styled-components'
 import theme from '../lib/theme'
@@ -33,6 +34,7 @@ class MyApp extends App {
     return (
       <Container>
         <GlobalStyle />
+        <Meta />
         <Component {...pageProps} />
       </Container>
     )
