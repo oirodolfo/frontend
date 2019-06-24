@@ -10,8 +10,6 @@
 
 Komfy frontend built with Next.js, React, Apollo and Styled Components
 
-[UI Components repository](https://github.com/komfy/ui)
-
 ## Project structure
 
 Coming soon...
