@@ -1,5 +1,12 @@
 import { createContext } from 'react'
 
+export interface PostContextInterface {
+  contentType: 'text' | 'image'
+  desc: string
+  likes: number
+  liked: boolean
+}
+
 export interface AppContextInterface {
   user:
     | Record<string, any>
@@ -18,4 +25,11 @@ const AppContext = createContext({
   }
 })
 
-export default AppContext
+const PostContext = createContext({
+  contentType: 'text',
+  desc: 'I think you forgot to define something',
+  likes: 1337,
+  liked: false
+})
+
+export { AppContext, PostContext }

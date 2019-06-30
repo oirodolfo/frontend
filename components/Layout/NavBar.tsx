@@ -1,7 +1,7 @@
 import React, { useContext, ComponentType, ReactNode } from 'react'
 import Link from 'next/link'
 import { Flex, Image } from 'rebass'
-import AppContext from '../../lib/context'
+import { AppContext } from '../../lib/context'
 import styled from 'styled-components'
 
 declare interface NavBarInterface {
