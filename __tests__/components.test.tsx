@@ -1,6 +1,7 @@
 import React from 'react'
-import AppContext from '../lib/context'
+import { AppContext, PostContext } from '../lib/context'
 import NavBar from '../components/Layout/NavBar'
+import LikeButton from '../components/Post/LikeButton'
 import { create } from 'react-test-renderer'
 import Logo from '../assets/logo'
 
@@ -40,6 +41,25 @@ describe('<NavBar />', () => {
         <NavBar Logo={Logo} loginLinks={loginLinks} />
       </AppContext.Provider>
     )
+    expect(tree.toJSON()).toMatchSnapshot()
+  })
+})
+
+describe('<LikeButton />', () => {
+  const initialContext = {
+    contentType: 'text',
+    desc: 'hi world',
+    likes: 1337,
+    liked: false
+  }
+
+  it('Unliked like button renders correctly', () => {
+    const tree = create(
+      <PostContext.Provider value={initialContext}>
+        <LikeButton />
+      </PostContext.Provider>
+    )
+
     expect(tree.toJSON()).toMatchSnapshot()
   })
 })
