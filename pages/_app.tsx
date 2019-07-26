@@ -2,7 +2,7 @@ import React from 'react'
 import { NextComponentType, NextPageContext } from 'next'
 import Meta from '../components/Meta'
 import App, { Container } from 'next/app'
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle, ThemeProvider } from 'styled-components'
 import theme from '../lib/theme'
 
 declare interface InitialProps {
@@ -14,6 +14,9 @@ const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     font-family: ${theme.font}
+  }
+  html, body {
+    height: 100%
   }
 `
 
@@ -35,7 +38,9 @@ class MyApp extends App {
       <Container>
         <GlobalStyle />
         <Meta />
-        <Component {...pageProps} />
+        <ThemeProvider theme={theme}>
+          <Component {...pageProps} />
+        </ThemeProvider>
       </Container>
     )
   }

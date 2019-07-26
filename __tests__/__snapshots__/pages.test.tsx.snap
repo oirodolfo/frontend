@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Random pages renders correctly 1`] = `
+<div
+  className="pages__Page-sc-9mrxf5-0 bOFcJn"
+>
+  <p>
+    Hello, #
+    Ivan
+    !
+  </p>
+  <p>
+    There will be content soon.
+  </p>
+  <p>
+    You need to wait a bit until we release our pre-alpha.
+  </p>
+  <a
+    href="/"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+  >
+    Home
+  </a>
+</div>
+`;

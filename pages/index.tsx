@@ -3,10 +3,8 @@ import styled from 'styled-components'
 import { useQuery } from '@apollo/react-hooks'
 import { gql } from 'apollo-boost'
 import Link from 'next/link'
-import AppContext from '../lib/context'
 import withApollo from '../lib/apollo'
 import NavBar from '../components/Layout/NavBar'
-import Logo from '../assets/logo'
 
 export const Page = styled.div`
   display: flex;
@@ -57,14 +55,6 @@ const links = [
   }
 ]
 
-const sampleUser = {
-  userId: 1,
-  name: 'testUser',
-  nsfw: false,
-  posts: [],
-  avatarUrl: ''
-}
-
 const Index = () => {
   const GET_USERS = `
   query myQuery {
@@ -76,43 +66,37 @@ const Index = () => {
   if (error) return <Page>Error! {error.message}</Page>
 
   return (
-    <AppContext.Provider
-      value={{
-        isSignedIn: false,
-        user: sampleUser
-      }}>
-      <Page>
-        <NavBar Logo={Logo} />
-        <h1>Komfy</h1>
-        <h2>Project Status ⚡</h2>
-        <Links>
-          {links.map((link: { href: string; text: string }, i: number) => (
-            <Link href={link.href} key={i}>
-              <a>{link.text}</a>
-            </Link>
-          ))}
-        </Links>
-        <Status>
-          Soon there will be new stuff. You&apos;ll be able to create an account and publish images and text. Pre-alpha
-          is close.
-        </Status>
-        <p>
-          I&apos;ll answer all questions here:&nbsp;
-          <Link href="https://t.me/talentless_guy">
-            <a>@talentless_guy</a>
+    <Page>
+      <NavBar />
+      <h1>Komfy</h1>
+      <h2>Project Status ⚡</h2>
+      <Links>
+        {links.map((link: { href: string; text: string }, i: number) => (
+          <Link href={link.href} key={i}>
+            <a>{link.text}</a>
           </Link>
-        </p>
-        <div>
-          {loading ? (
-            <b>Loading...</b>
-          ) : (
-            <span>
-              GraphQL request:<b> {data.hello}</b>
-            </span>
-          )}
-        </div>
-      </Page>
-    </AppContext.Provider>
+        ))}
+      </Links>
+      <Status>
+        Soon there will be new stuff. You&apos;ll be able to create an account and publish images and text. Pre-alpha is
+        close.
+      </Status>
+      <p>
+        I&apos;ll answer all questions here:&nbsp;
+        <Link href="https://t.me/talentless_guy">
+          <a>@talentless_guy</a>
+        </Link>
+      </p>
+      <div>
+        {loading ? (
+          <b>Loading...</b>
+        ) : (
+          <span>
+            GraphQL request:<b> {data.hello}</b>
+          </span>
+        )}
+      </div>
+    </Page>
   )
 }
 export default withApollo(Index)

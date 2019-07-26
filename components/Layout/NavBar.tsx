@@ -1,15 +1,11 @@
-import React, { useContext, ComponentType, ReactNode } from 'react'
+import React, { ReactNode } from 'react'
 import Link from 'next/link'
 import { Flex, Image } from 'rebass'
-import AppContext from '../../lib/context'
 import styled from 'styled-components'
 
 declare interface NavBarInterface {
-  Logo: ComponentType
-  loginLinks?: {
-    href: string
-    text: string
-  }[]
+  items?: { text: string; href: string }[]
+  children?: JSX.Element[] | JSX.Element
 }
 
 const LinksGroup = styled.div`
@@ -27,47 +23,36 @@ const LinksGroup = styled.div`
 const StyledNav = styled(Flex)`
   padding: 0.5em 3em;
   background: black;
+  position: fixed;
+  top: 0;
+  left: 0;
 `
 
 const NavBar = ({
-  Logo,
-  loginLinks = [
+  items = [
     {
-      href: '/login',
-      text: 'Sign In'
+      text: 'Sign In',
+      href: '/login'
     },
     {
-      href: '/register',
-      text: 'Sign Up'
+      text: 'Sign Up',
+      href: '/register'
     }
   ]
 }: NavBarInterface) => {
-  const { isSignedIn, user } = useContext(AppContext)
-
-  const LogoContainer = styled(Logo)`
-    height: 7vh;
-    width: 100%;
-  `
-
   return (
     <StyledNav flexWrap="wrap" flexDirection="row" width={1} alignItems="center" justifyContent="space-between">
       <Link href="/">
         <a>
-          <LogoContainer />
+          <Image height="7vh" width="100%" src="../../static/logo.svg" />
         </a>
       </Link>
       <LinksGroup>
-        {isSignedIn ? (
-          <Link href={`/users/${user.userId}`}>
-            <Image src={user.avatarUrl} width={[1]} />
+        {items.map((el: { href: string; text: ReactNode }) => (
+          <Link href={el.href} key={el.href}>
+            <a>{el.text}</a>
           </Link>
-        ) : (
-          loginLinks.map((el: { href: string; text: ReactNode }) => (
-            <Link href={el.href} key={el.href}>
-              <a>{el.text}</a>
-            </Link>
-          ))
-        )}
+        ))}
       </LinksGroup>
     </StyledNav>
   )

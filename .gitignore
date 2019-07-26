@@ -62,7 +62,3 @@ typings/
 
 # Now build output
 .now
-
-# tests output
-
-__tests__/__snapshots__

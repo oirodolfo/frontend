@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Form /> renders Form with items 1`] = `
+<form
+  action="/"
+  className="Form__StyledForm-sc-1qkwnfg-0 gRkSvg"
+  method="POST"
+  onSubmit={[Function]}
+>
+  <input
+    name="username"
+    placeholder="What is ur name?"
+    type="password"
+  />
+</form>
+`;
+
+exports[`<NavBar /> renders NavBar with custom props 1`] = `
+<div
+  className="sc-bdVaJa sc-bwzfXH NavBar__StyledNav-sc-5bxc2y-1 fuxwjd"
+  width={1}
+>
+  <a
+    href="/"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+  >
+    <img
+      className="sc-bdVaJa sc-bZQynM ilartJ"
+      height="7vh"
+      src="../../static/logo.svg"
+      width="100%"
+    />
+  </a>
+  <div
+    className="NavBar__LinksGroup-sc-5bxc2y-0 blbCBZ"
+  >
+    <a
+      href="/profile"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      My profile
+    </a>
+  </div>
+</div>
+`;
+
+exports[`<NavBar /> renders NavBar without props 1`] = `
+<div
+  className="sc-bdVaJa sc-bwzfXH NavBar__StyledNav-sc-5bxc2y-1 fuxwjd"
+  width={1}
+>
+  <a
+    href="/"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+  >
+    <img
+      className="sc-bdVaJa sc-bZQynM ilartJ"
+      height="7vh"
+      src="../../static/logo.svg"
+      width="100%"
+    />
+  </a>
+  <div
+    className="NavBar__LinksGroup-sc-5bxc2y-0 blbCBZ"
+  >
+    <a
+      href="/login"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      Sign In
+    </a>
+    <a
+      href="/register"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      Sign Up
+    </a>
+  </div>
+</div>
+`;
