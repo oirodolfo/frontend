@@ -3,7 +3,7 @@
 exports[`<Form /> renders Form with items 1`] = `
 <form
   action="/"
-  className="Form__StyledForm-sc-1qkwnfg-0 gRkSvg"
+  className="Form__StyledForm-sc-1qkwnfg-0 bGzgGo"
   method="POST"
   onSubmit={[Function]}
 >
@@ -15,9 +15,11 @@ exports[`<Form /> renders Form with items 1`] = `
 </form>
 `;
 
+exports[`<Meta /> should render meta tags 1`] = `null`;
+
 exports[`<NavBar /> renders NavBar with custom props 1`] = `
 <div
-  className="sc-bdVaJa sc-bwzfXH NavBar__StyledNav-sc-5bxc2y-1 fuxwjd"
+  className="sc-bdVaJa sc-bwzfXH NavBar__StyledNav-sc-5bxc2y-1 jGuGMY"
   width={1}
 >
   <a
@@ -48,7 +50,7 @@ exports[`<NavBar /> renders NavBar with custom props 1`] = `
 
 exports[`<NavBar /> renders NavBar without props 1`] = `
 <div
-  className="sc-bdVaJa sc-bwzfXH NavBar__StyledNav-sc-5bxc2y-1 fuxwjd"
+  className="sc-bdVaJa sc-bwzfXH NavBar__StyledNav-sc-5bxc2y-1 jGuGMY"
   width={1}
 >
   <a
