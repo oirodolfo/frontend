@@ -47,9 +47,6 @@
     "next-images": "^1.1.2",
     "prettier": "^1.18.2",
     "react-test-renderer": "^16.8.6",
-    "stylelint": "^10.1.0",
-    "stylelint-config-prettier": "^5.2.0",
-    "stylelint-prettier": "^1.1.1",
     "ts-jest": "^24.0.2",
     "typescript": "^3.5.2",
     "webpack": "^4.37.0"
@@ -57,7 +54,7 @@
   "scripts": {
     "start": "cross-env NODE_ENV=production next",
     "build": "next build",
-    "dev": "next -p 80",
+    "dev": "next",
     "test": "jest --collectCoverage",
     "test:update": "jest --updateSnapshot --collectCoverage",
     "storybook": "start-storybook -p 5000",
