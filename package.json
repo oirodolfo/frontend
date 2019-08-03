@@ -53,6 +53,7 @@
     "build": "next build",
     "dev": "next",
     "test": "cypress run",
-    "cypress": "cypress open"
+    "cy:open": "cypress open",
+    "cy:verify": "cypress verify"
   }
 }

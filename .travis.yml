@@ -16,14 +16,14 @@ cache:
     - ~/.npm
     - ~/.cache
   override:
-    - npm ci
-    - npm run cy:verify
+    - yarn
+    - yarn cy:verify
 
-cache: npm
+cache: yarn
 
 install:
-  - npm ci
-  - npm i -g codecov
+  - yarn
+  - yarn i -g codecov
 
 after_success:
   - codecov
