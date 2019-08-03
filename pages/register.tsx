@@ -3,7 +3,6 @@ import { Flex, Card, Heading } from 'rebass'
 import { Button } from '../components/Primitives'
 import NavBar from '../components/Layout/NavBar'
 import Form from '../components/Layout/Form'
-import { dev } from '../env.json'
 
 const Register = () => {
   const [name, setName] = useState<string>('')
@@ -11,12 +10,13 @@ const Register = () => {
   const [pwdLevel, setPwdLevel] = useState<string>('off')
 
   const newPwd = () => {
-    fetch(`${dev.api}/rand${pwdLevel === 'on' ? '' : '_dict'}`)
+    fetch(`${process.env.API}/rand${pwdLevel === 'on' ? '' : '_dict'}`)
       .then(res => res.text())
       .then(text => setPwd(text))
   }
 
   useEffect(newPwd, [pwdLevel])
+  useEffect(() => console.log(process.env.API), [])
 
   return (
     <Fragment>
@@ -34,7 +34,7 @@ const Register = () => {
         <Card>
           <Form
             to="/"
-            action={`${dev.api}/reg`}
+            action={`${process.env.API}/reg`}
             body={[
               {
                 name: 'username',

@@ -62,6 +62,3 @@ typings/
 
 # Now build output
 .now
-
-# Env variables
-env.json
