@@ -23,7 +23,7 @@ cache: yarn
 
 install:
   - yarn
-  - yarn i -g codecov
+  - yarn add -g codecov
 
 after_success:
   - codecov
