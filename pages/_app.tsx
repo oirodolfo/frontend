@@ -1,49 +1,42 @@
 import React from 'react'
-import { NextComponentType, NextPageContext } from 'next'
 import Meta from '../components/Meta'
 import App, { Container } from 'next/app'
+import { ApolloProvider } from 'react-apollo'
+import { ApolloClient } from 'apollo-boost'
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
+import withApollo from '../lib/apollo'
 import theme from '../lib/theme'
 
-declare interface InitialProps {
-  Component: NextComponentType
-  ctx: NextPageContext
+declare interface Props {
+  apollo: ApolloClient<any>
 }
 
 const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
-    font-family: ${theme.font}
+    font-family: ${theme.font}, sans-serif;
   }
   html, body {
     height: 100%
   }
 `
 
-class MyApp extends App {
-  public static async getInitialProps({ Component, ctx }: InitialProps) {
-    let pageProps = {}
-
-    if (Component.getInitialProps) {
-      pageProps = await Component.getInitialProps(ctx)
-    }
-
-    return { pageProps }
-  }
-
+class BaseApp extends App<Props> {
   public render() {
-    const { Component, pageProps } = this.props
+    const { Component, pageProps, apollo } = this.props
 
     return (
       <Container>
         <GlobalStyle />
         <Meta />
-        <ThemeProvider theme={theme}>
-          <Component {...pageProps} />
-        </ThemeProvider>
+        <ApolloProvider client={apollo}>
+          <ThemeProvider theme={theme}>
+            <Component {...pageProps} />
+          </ThemeProvider>
+        </ApolloProvider>
       </Container>
     )
   }
 }
 
-export default MyApp
+export default withApollo(BaseApp)

@@ -3,15 +3,8 @@
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
     "jsx": "preserve",
-    "lib": [
-      "dom",
-      "es2017"
-    ],
-    "types": [
-      "jest",
-      "react",
-      "styled-components"
-    ],
+    "lib": ["dom", "es2017"],
+    "types": ["jest", "react", "styled-components"],
     "module": "esnext",
     "moduleResolution": "node",
     "noEmit": true,
@@ -28,13 +21,6 @@
     "resolveJsonModule": true,
     "isolatedModules": true
   },
-  "exclude": [
-    "node_modules"
-  ],
-  "include": [
-    "**/*.ts",
-    "**/*.tsx",
-    "**/*.svg",
-    "**/*.webp"
-  ]
+  "exclude": ["node_modules"],
+  "include": ["**/*.ts", "**/*.tsx", "**/*.svg", "**/*.webp"]
 }

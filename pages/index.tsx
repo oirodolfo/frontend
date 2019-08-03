@@ -1,9 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-import { useQuery } from '@apollo/react-hooks'
+import { Query, QueryResult } from 'react-apollo'
 import { gql } from 'apollo-boost'
 import Link from 'next/link'
-import withApollo from '../lib/apollo'
 import NavBar from '../components/Layout/NavBar'
 
 export const Page = styled.div`
@@ -56,14 +55,11 @@ const links = [
 ]
 
 const Index = () => {
-  const GET_USERS = `
-  query myQuery {
-    hello
-  }
+  const GET_USERS = gql`
+    query myQuery {
+      hello
+    }
   `
-  const { loading, error, data } = useQuery(gql(GET_USERS))
-
-  if (error) return <Page>Error! {error.message}</Page>
 
   return (
     <Page>
@@ -87,16 +83,15 @@ const Index = () => {
           <a>@talentless_guy</a>
         </Link>
       </p>
-      <div>
-        {loading ? (
-          <b>Loading...</b>
-        ) : (
-          <span>
-            GraphQL request:<b> {data.hello}</b>
-          </span>
-        )}
-      </div>
+      <Query query={GET_USERS}>
+        {({ loading, error, data }: QueryResult) => {
+          if (error) return <h1>{error}</h1>
+          if (loading || !data) return <div>Loading</div>
+
+          return <div>{JSON.stringify(data)}</div>
+        }}
+      </Query>
     </Page>
   )
 }
-export default withApollo(Index)
+export default Index

@@ -21,9 +21,9 @@ const LinksGroup = styled.div`
 `
 
 const StyledNav = styled(Flex)`
-  padding: 0.5em 3em;
-  background: black;
-  position: fixed;
+  padding: 0.5rem 3rem;
+  background: ${({ theme }) => theme.colors.background};
+  position: sticky;
   top: 0;
   left: 0;
 `

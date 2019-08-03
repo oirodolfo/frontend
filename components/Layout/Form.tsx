@@ -1,23 +1,36 @@
-import React, { InputHTMLAttributes, FormEvent, ReactNode } from 'react'
+import React, { InputHTMLAttributes, FormEvent, ReactNode, Fragment } from 'react'
 import Router from 'next/router'
 import styled from 'styled-components'
+import Tooltip from 'react-tooltip'
+import { Flex } from 'rebass'
+import { Input, HelpButton } from '../Primitives'
 
-interface FormInterface {
+declare interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
+  slug?: string
+  help?: ReactNode
+}
+
+declare interface FormInterface {
   to: string
   method: 'POST' | 'GET' | 'PUT' | 'DELETE'
   children?: ReactNode
-  body: InputHTMLAttributes<HTMLInputElement>[]
+  body: InputProps[]
   action: string
 }
 
 const StyledForm = styled.form`
-  display: grid;
-  place-items: center;
-  grid-gap: 1em;
-  & > input {
-    border: 1px solid black;
-    padding: 0.2em;
-    font-size: calc(0.8em + 1vmin);
+  & > input:disabled {
+    color: black;
+  }
+  h2 {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+    display: inline-block;
+  }
+  button {
+    display: block;
+    width: 100%;
+    margin-top: 24px;
   }
 `
 
@@ -47,8 +60,24 @@ const Form = ({ to, action, method, children, body }: FormInterface) => {
 
   return (
     <StyledForm method={method} action={action} onSubmit={sendForm}>
-      {body.map((field: InputHTMLAttributes<HTMLInputElement>, i: number) => (
-        <input key={i} {...field} />
+      {body.map((field: InputProps, i: number) => (
+        <Fragment>
+          <Flex>
+            <h2>{field.slug}</h2>
+            {field.help && (
+              <Fragment>
+                <HelpButton data-tip data-for="global">
+                  ?
+                </HelpButton>
+                <Tooltip id="global" aria-haspopup={true} role="info">
+                  {field.help}
+                </Tooltip>
+              </Fragment>
+            )}
+          </Flex>
+
+          <Input key={i} {...field} />
+        </Fragment>
       ))}
       {children}
     </StyledForm>

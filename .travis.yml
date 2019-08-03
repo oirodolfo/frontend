@@ -3,11 +3,28 @@ language: node_js
 node_js:
   - '12'
 
-cache: yarn
+
+# Needed for Cypress
+addons:
+  apt:
+    packages:
+    - libgconf-2-4
+
+cache:
+  # cache both npm modules and Cypress binary
+  directories:
+    - ~/.npm
+    - ~/.cache
+  override:
+    - npm ci
+    - npm run cy:verify
+
+cache: npm
 
 install:
-  - yarn install
-  - yarn global add codecov
+  - npm ci
+  - npm i -g codecov
 
 after_success:
   - codecov
+
