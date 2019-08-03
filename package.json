@@ -44,16 +44,18 @@
     "next-images": "^1.1.2",
     "prettier": "^1.18.2",
     "react-test-renderer": "^16.8.6",
+    "start-server-and-test": "^1.9.1",
     "ts-jest": "^24.0.2",
     "typescript": "^3.5.2",
     "webpack": "^4.37.0"
   },
   "scripts": {
     "start": "env NODE_ENV=production next start",
-    "build": "env API=https://api.komfy.now.sh next build",
-    "dev": "env API=http://localhost:8000 next",
+    "build": "next build",
+    "dev": "next",
     "test": "cypress run --record --key b506e1ae-9bf9-41fb-bdb9-379fecba0221",
     "cy:open": "cypress open",
-    "cy:verify": "cypress verify"
+    "cy:verify": "cypress verify",
+    "ci": "start-server-and-test start http://localhost:3000 test"
   }
 }

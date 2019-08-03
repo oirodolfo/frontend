@@ -21,6 +21,10 @@ cache:
 
 cache: yarn
 
+before_script:
+  - yarn build
+  - yarn start
+
 install:
   - yarn
   - yarn global add codecov
