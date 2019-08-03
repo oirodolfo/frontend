@@ -1,4 +1,8 @@
 {
   "baseUrl": "https://komfy.now.sh",
-  "ignoreTestFiles": ["**/__snapshots__/*", "**/__image_snapshots__/*"]
+  "ignoreTestFiles": [
+    "**/__snapshots__/*",
+    "**/__image_snapshots__/*"
+  ],
+  "projectId": "b2n6vi"
 }
