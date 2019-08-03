@@ -3,20 +3,27 @@ import styled, { css } from 'styled-components'
 export const Button = styled.button<{ variant: string }>`
   border-radius: 2rem;
   border: none;
-  padding: 0.8rem;
-  font-size: calc(1em - 1vw);
+  padding: 0.6rem;
+  font-size: calc(0.9em - 1vw);
   ${({ theme, variant }) => css`
-    color: ${theme[variant].color};
-    background: ${theme[variant].background};
+    color: ${theme[variant].button.color};
+    background: ${theme[variant].button.background};
   `};
+  :hover {
+    ${({ theme, variant }) => css`
+      color: ${theme[variant].button.hover.color};
+      background: ${theme[variant].button.hover.background};
+    `}
+    cursor: pointer;
+  }
 `
 
 export const Input = styled.input`
   border-radius: 2rem;
   border: none;
   padding: 0.8rem;
-  font-size: calc(1em - 1vw);
-  background: ${({ theme }) => theme.primary.background};
+  font-size: calc(0.9em - 1vw);
+  background: ${({ theme }) => theme.primary.input.background};
 `
 
 export const HelpButton = styled.a`
@@ -24,8 +31,14 @@ export const HelpButton = styled.a`
   font-size: 2em;
   line-height: 2;
   margin-left: 0.3em;
-  background: white;
   display: inline-block;
   text-align: center;
   margin-top: 0;
+`
+
+export const BasicContainer = styled.div`
+  border-radius: 1em;
+  background: white;
+  box-shadow: 9px 10px 52px 9px hsla(0, 0%, 0%, 0.17);
+  padding: 0.7em 2em;
 `

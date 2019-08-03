@@ -23,21 +23,19 @@ const StyledForm = styled.form`
     color: black;
   }
   h2 {
-    font-size: 2em;
+    font-size: 1.5em;
     margin-bottom: 0.5em;
     display: inline-block;
   }
   button {
     display: block;
     width: 100%;
-    margin-top: 24px;
+    margin-top: 0.5em;
   }
 `
 
 const Form = ({ to, action, method, children, body }: FormInterface) => {
   const sendForm = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-
     const formElement = e.currentTarget
 
     const formContent = new FormData(formElement)
@@ -66,10 +64,10 @@ const Form = ({ to, action, method, children, body }: FormInterface) => {
             <h2>{field.slug}</h2>
             {field.help && (
               <Fragment>
-                <HelpButton data-tip data-for="global">
+                <HelpButton data-tip data-for={field.name}>
                   ?
                 </HelpButton>
-                <Tooltip id="global" aria-haspopup={true} role="info">
+                <Tooltip id={field.name} aria-haspopup={true} role="info">
                   {field.help}
                 </Tooltip>
               </Fragment>

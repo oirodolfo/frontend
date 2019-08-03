@@ -1,6 +1,6 @@
 import React, { Fragment, useState, useEffect } from 'react'
-import { Flex, Card, Heading } from 'rebass'
-import { Button } from '../components/Primitives'
+import { Flex, Heading } from 'rebass'
+import { Button, BasicContainer } from '../components/Primitives'
 import NavBar from '../components/Layout/NavBar'
 import Form from '../components/Layout/Form'
 
@@ -16,8 +16,6 @@ const Register = () => {
   }
 
   useEffect(newPwd, [pwdLevel])
-  useEffect(() => console.log(process.env.API), [])
-
   return (
     <Fragment>
       <NavBar />
@@ -28,10 +26,10 @@ const Register = () => {
         alignItems="center"
         justifyContent="center"
         flexDirection="column">
-        <Heading as="h1" textAlign="center" fontSize="calc(2em + 2vw)">
+        <Heading as="h1" textAlign="center" fontSize="calc(1.8em + 2vw)">
           Hello {name}!
         </Heading>
-        <Card>
+        <BasicContainer>
           <Form
             to="/"
             action={`${process.env.API}/reg`}
@@ -39,6 +37,7 @@ const Register = () => {
               {
                 name: 'username',
                 type: 'text',
+                required: true,
                 onInput: e => setName(e.currentTarget.value),
                 placeholder: 'How we can call you?',
                 slug: 'Username'
@@ -47,6 +46,7 @@ const Register = () => {
                 slug: 'Email',
                 name: 'email',
                 type: 'email',
+                required: true,
                 placeholder: 'hello@example.com',
                 help: 'Email is only used for verification link and nothing else.'
               },
@@ -54,7 +54,9 @@ const Register = () => {
                 slug: 'Password',
                 name: 'password',
                 value: pwd,
-                disabled: true
+                disabled: true,
+                help:
+                  'For better security, an algorithm generates a password instead of a person. It removes the human factor with passwords like "P@$$word123"'
               }
             ]}
             method="POST">
@@ -67,11 +69,14 @@ const Register = () => {
                 onClick={() => setPwdLevel(pwdLevel === 'on' ? 'off' : 'on')}
               />
             </div>
-            <Button variant="primary" onClick={newPwd}>
+            <Button type="button" variant="primary" onClick={newPwd}>
               Create password
             </Button>
+            <Button variant="secondary" type="submit">
+              Submit
+            </Button>
           </Form>
-        </Card>
+        </BasicContainer>
       </Flex>
     </Fragment>
   )
