@@ -3,22 +3,19 @@ language: node_js
 node_js:
   - '10'
 
-
 # Needed for Cypress
 addons:
   apt:
     packages:
-    - libgconf-2-4
+      - libgconf-2-4
 
 cache:
   directories:
-    - ~/.npm
+    - ~/.yarn
     - ~/.cache
   override:
     - yarn
     - yarn cy:verify
-
-cache: yarn
 
 before_script:
   - yarn build
@@ -32,4 +29,3 @@ script:
 
 after_success:
   - codecov
-
