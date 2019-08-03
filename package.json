@@ -57,5 +57,8 @@
     "cy:open": "cypress open",
     "cy:verify": "cypress verify",
     "ci": "start-server-and-test start http://localhost:3000 test"
+  },
+  "engines": {
+    "node": ">=11"
   }
 }
