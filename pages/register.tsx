@@ -54,7 +54,7 @@ const Register = () => {
                 slug: 'Password',
                 name: 'password',
                 value: pwd,
-                disabled: true,
+                readOnly: true,
                 help:
                   'For better security, an algorithm generates a password instead of a person. It removes the human factor with passwords like "P@$$word123"'
               }
