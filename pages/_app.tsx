@@ -14,7 +14,7 @@ declare interface Props {
 const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
-    font-family: ${theme.font}, sans-serif;
+    font-family: ${theme.font}, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
   html, body, #__next {
     height: 100%

@@ -2,8 +2,8 @@ import React, { Fragment } from 'react'
 import styled from 'styled-components'
 import { Query, QueryResult } from 'react-apollo'
 import { gql, DocumentNode } from 'apollo-boost'
-import Link from 'next/link'
 import NavBar from '../components/Layout/NavBar'
+import { Heading } from 'rebass'
 import { Page } from '../components/Primitives'
 
 /* const Status = styled.p`
@@ -51,8 +51,15 @@ const Index = () => {
     <Fragment>
       <NavBar />
       <Page flexDirection="column" alignItems="center" justifyContent="center">
-        <h1>Komfy</h1>
+        <Heading as="h1" textAlign="center" fontSize="calc(1.8em + 5vw)">
+          Komfy
+        </Heading>
+
         <h2>Project Status ⚡</h2>
+        <p>
+          Komfy is a protected social network without annoying trackers and context ads. It is currently in active
+          development. User registration will be available soon.
+        </p>
         <Links>
           {links.map((link: { href: string; text: string }, i: number) => (
             <a href={link.href} key={i}>
@@ -62,9 +69,7 @@ const Index = () => {
         </Links>
         <p>
           I&apos;ll answer all questions here:&nbsp;
-          <Link href="https://t.me/talentless_guy">
-            <a>@talentless_guy</a>
-          </Link>
+          <a href="https://t.me/talentless_guy">@talentless_guy</a>
         </p>
         <Query query={HELLO_WORLD}>
           {({ loading, error, data }: QueryResult) => {
