@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import 'isomorphic-unfetch'
 import { NextPageContext } from 'next'
-import { Page } from '../pages/index'
+import { Page } from '../components/Primitives'
 
 const UserPage = ({ id }: { id: string }) => (
   <Page>

@@ -1,6 +1,6 @@
 import React, { Fragment, useState, useEffect } from 'react'
-import { Flex, Heading } from 'rebass'
-import { Button, BasicContainer } from '../components/Primitives'
+import { Heading } from 'rebass'
+import { Button, BasicContainer, Page } from '../components/Primitives'
 import NavBar from '../components/Layout/NavBar'
 import Form from '../components/Layout/Form'
 
@@ -19,10 +19,7 @@ const Register = () => {
   return (
     <Fragment>
       <NavBar />
-      <Flex
-        alignItems="center"
-        justifyContent="center"
-        flexDirection="column">
+      <Page alignItems="center" justifyContent="center" flexDirection="column">
         <Heading as="h1" textAlign="center" fontSize="calc(1.8em + 2vw)">
           Hello {name}!
         </Heading>
@@ -74,7 +71,7 @@ const Register = () => {
             </Button>
           </Form>
         </BasicContainer>
-      </Flex>
+      </Page>
     </Fragment>
   )
 }

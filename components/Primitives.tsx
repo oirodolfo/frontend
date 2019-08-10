@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components'
+import { Flex } from 'rebass'
 
 export const Button = styled.button<{ variant: string }>`
   border-radius: 2rem;
@@ -41,4 +42,8 @@ export const BasicContainer = styled.div`
   background: white;
   box-shadow: 9px 10px 52px 9px hsla(0, 0%, 0%, 0.17);
   padding: 0.7em 2em;
+`
+
+export const Page = styled(Flex)`
+  height: 100%;
 `
