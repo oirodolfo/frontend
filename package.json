@@ -7,7 +7,6 @@
   "author": "talentless_guy <pilll.PL22@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@bit/semantic-org.semantic-ui-react.checkbox": "^0.86.0",
     "apollo-boost": "^0.4.3",
     "graphql": "^14.3.1",
     "isomorphic-unfetch": "^3.0.0",

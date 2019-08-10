@@ -20,9 +20,6 @@ const Register = () => {
     <Fragment>
       <NavBar />
       <Flex
-        style={{
-          height: '90vh'
-        }}
         alignItems="center"
         justifyContent="center"
         flexDirection="column">

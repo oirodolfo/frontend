@@ -68,9 +68,7 @@ const Index = () => {
       <h2>Project Status ⚡</h2>
       <Links>
         {links.map((link: { href: string; text: string }, i: number) => (
-          <Link href={link.href} key={i}>
-            <a>{link.text}</a>
-          </Link>
+            <a href={link.href} key={i}>{link.text}</a>
         ))}
       </Links>
       <Status>
