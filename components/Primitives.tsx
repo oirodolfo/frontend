@@ -5,7 +5,6 @@ export const Button = styled.button<{ variant: string }>`
   border-radius: 2rem;
   border: none;
   padding: 0.6rem;
-  font-size: calc(0.9em - 1vw);
   ${({ theme, variant }) => css`
     color: ${theme[variant].button.color};
     background: ${theme[variant].button.background};
@@ -23,7 +22,6 @@ export const Input = styled.input`
   border-radius: 2rem;
   border: none;
   padding: 0.8rem;
-  font-size: calc(0.9em - 1vw);
   background: ${({ theme }) => theme.primary.input.background};
 `
 

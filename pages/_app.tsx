@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import Meta from '../components/Meta'
-import App, { Container } from 'next/app'
+import App from 'next/app'
 import { ApolloProvider } from 'react-apollo'
 import { ApolloClient } from 'apollo-boost'
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
@@ -26,7 +26,7 @@ class BaseApp extends App<Props> {
     const { Component, pageProps, apollo } = this.props
 
     return (
-      <Container>
+      <Fragment>
         <GlobalStyle />
         <Meta />
         <ApolloProvider client={apollo}>
@@ -34,7 +34,7 @@ class BaseApp extends App<Props> {
             <Component {...pageProps} />
           </ThemeProvider>
         </ApolloProvider>
-      </Container>
+      </Fragment>
     )
   }
 }
